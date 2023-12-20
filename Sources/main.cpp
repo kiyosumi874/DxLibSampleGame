@@ -37,10 +37,10 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 		printfDx("deltaTime[%.3f]\n", deltaTime);
 #endif // _DEBUG
 
-		for (auto item : gameObjects)
+		for (auto inst : gameObjects)
 		{
-			item->Update(deltaTime);
-			item->Draw();
+			inst->Update(deltaTime);
+			inst->Draw();
 		}
 
 		ScreenFlip();
