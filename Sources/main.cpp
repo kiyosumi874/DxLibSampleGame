@@ -12,6 +12,11 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	constexpr int WindowWidth = 640; // 画面の横幅
 	constexpr int WindowHeight = 480; // 画面の縦幅
 	constexpr int ColorBitNum = 16; // カラービット数
+	constexpr unsigned int White = 4294967295; // DxLibのGetColorであらかじめ取得しておいた色の番号
+	constexpr unsigned int Red = 4294901760;
+	constexpr unsigned int Green = 4278255360;
+	constexpr unsigned int Blue = 4278190335;
+	constexpr unsigned int Yellow = 4294956032;
 
 	// DxLibのセットアップ
 	SetGraphMode(WindowWidth, WindowHeight, ColorBitNum);
@@ -21,10 +26,11 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 		return -1;
 	}
 	SetDrawScreen(DX_SCREEN_BACK);
+	//SetBackgroundColor(255, 255, 255);
 
 	float deltaTime = 1.0f / 60.0f; // 一個前のゲームループが一周するのに掛かった時間
 	list<GameObject*> gameObjects;
-	Ground* ground = new Ground(WindowWidth, WindowHeight, 100, GetColor(0,255,0));
+	Ground* ground = new Ground(WindowWidth, WindowHeight, 400, White);
 	gameObjects.emplace_back(ground);
 
 	// ゲームループ
