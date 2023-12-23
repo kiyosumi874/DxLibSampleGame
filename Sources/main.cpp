@@ -28,14 +28,13 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 		return -1;
 	}
 	SetDrawScreen(DX_SCREEN_BACK);
-	//SetBackgroundColor(255, 255, 255);
 
 	float deltaTime = 1.0f / 60.0f; // 一個前のゲームループが一周するのに掛かった時間
 	list<GameObject*> gameObjects;
 	Player* player = new Player();
-	//Player2* player2 = new Player2();
+	Player2* player2 = new Player2();
 	gameObjects.emplace_back(player);
-	//gameObjects.emplace_back(player2);
+	gameObjects.emplace_back(player2);
 	/*Ground* ground = new Ground(WindowWidth, WindowHeight, 400, White);
 	gameObjects.emplace_back(ground);*/
 
@@ -61,7 +60,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
 	gameObjects.clear();
 	delete player;
-	//delete player2;
+	delete player2;
 	//delete ground;
 
 	// DxLibの後処理
