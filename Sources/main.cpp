@@ -2,6 +2,8 @@
 #include <list>
 #include "GameObject.h"
 #include "Ground.h"
+#include "Player.h"
+#include "Player2.h"
 
 using namespace std;
 
@@ -30,8 +32,12 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
 	float deltaTime = 1.0f / 60.0f; // 一個前のゲームループが一周するのに掛かった時間
 	list<GameObject*> gameObjects;
-	Ground* ground = new Ground(WindowWidth, WindowHeight, 400, White);
-	gameObjects.emplace_back(ground);
+	Player* player = new Player();
+	//Player2* player2 = new Player2();
+	gameObjects.emplace_back(player);
+	//gameObjects.emplace_back(player2);
+	/*Ground* ground = new Ground(WindowWidth, WindowHeight, 400, White);
+	gameObjects.emplace_back(ground);*/
 
 	// ゲームループ
 	while (ProcessMessage() == 0 && CheckHitKey(KEY_INPUT_ESCAPE) == 0)
@@ -54,7 +60,9 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	}
 
 	gameObjects.clear();
-	delete ground;
+	delete player;
+	//delete player2;
+	//delete ground;
 
 	// DxLibの後処理
 	DxLib_End();

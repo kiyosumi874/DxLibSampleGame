@@ -141,10 +141,14 @@
   <ItemGroup>
     <ClCompile Include="Sources\main.cpp" />
     <ClCompile Include="Sources\Ground.cpp" />
+    <ClCompile Include="Sources\Player.cpp" />
+    <ClCompile Include="Sources\Player2.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Sources\GameObject.h" />
     <ClInclude Include="Sources\Ground.h" />
+    <ClInclude Include="Sources\Player.h" />
+    <ClInclude Include="Sources\Player2.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
